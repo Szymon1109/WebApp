@@ -1,1 +1,6 @@
-# WebApp
+# Web Application
+
+## Author:
+```
+Szymon Betlewski
+```
