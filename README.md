@@ -1,5 +1,4 @@
-# Web Application
-
+# Web Application: Cinema
 ## Author:
 ```
 Szymon Betlewski
