@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -29,6 +31,10 @@ public class ReportController {
 
     @GetMapping("/movies")
     public List<Movie> getMovies(){
-        return movieRepository.findAll();
+        return movieRepository.findAll()
+                .stream()
+                .sorted(Comparator.comparingInt(Movie::getRating)
+                        .reversed())
+                .collect(Collectors.toList());
     }
 }
